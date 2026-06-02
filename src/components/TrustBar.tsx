@@ -2,9 +2,9 @@ import { Wrench, Search, BadgeCheck, Zap } from "lucide-react";
 import { RevealGroup, RevealItem } from "./ui/Reveal";
 
 const items = [
-  { icon: Wrench, text: "Técnicos especializados só em games" },
+  { icon: Wrench, text: "Loja física especializada em games" },
   { icon: Search, text: "Orçamento sem compromisso" },
-  { icon: BadgeCheck, text: "Reparo com peças de qualidade" },
+  { icon: BadgeCheck, text: "Reparo de hardware com peças de qualidade" },
   { icon: Zap, text: "Atendimento rápido pelo WhatsApp" },
 ];
 

@@ -40,7 +40,7 @@ export function Hero() {
           {...animProps(0)}
           className="mb-4 font-display text-xs font-semibold uppercase tracking-[0.22em] text-cyan sm:text-sm"
         >
-          Assistência técnica especializada em videogames
+          Conserto de videogames · Loja física em Goiânia
         </motion.p>
 
         <motion.h1
@@ -64,8 +64,8 @@ export function Hero() {
           {...animProps(2)}
           className="mx-auto mt-5 max-w-2xl text-base text-muted sm:text-lg"
         >
-          Conserto e reparo de PlayStation, Xbox, Nintendo Switch e controles, com
-          técnicos especializados e orçamento sem compromisso.
+          Conserto e reparo de hardware de PlayStation, Xbox, Nintendo Switch e
+          controles. Loja física em Goiânia, com orçamento sem compromisso.
         </motion.p>
 
         <motion.div
@@ -73,7 +73,7 @@ export function Hero() {
           className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <WhatsappButton source="hero" className="w-full sm:w-auto">
-            Falar com um técnico agora
+            Pedir meu orçamento agora
           </WhatsappButton>
           <LinkButton href="#servicos" variant="ghost" className="w-full sm:w-auto">
             Ver o que consertamos

@@ -23,8 +23,8 @@ export function Footer() {
             loading="lazy"
           />
           <p className="mt-4 max-w-xs text-sm text-muted">
-            Assistência técnica especializada em videogames. A gente traz seu
-            console de volta à vida.
+            Conserto e reparo de hardware de videogames. Loja física em Goiânia —
+            a gente traz seu console de volta à vida.
           </p>
         </div>
 
