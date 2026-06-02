@@ -4,7 +4,7 @@ import { RevealGroup, RevealItem } from "./ui/Reveal";
 const items = [
   { icon: Wrench, text: "Técnicos especializados só em games" },
   { icon: Search, text: "Orçamento sem compromisso" },
-  { icon: BadgeCheck, text: "Garantia no serviço" },
+  { icon: BadgeCheck, text: "Reparo com peças de qualidade" },
   { icon: Zap, text: "Atendimento rápido pelo WhatsApp" },
 ];
 

@@ -7,7 +7,7 @@ import { EcgScrollDivider } from "./ui/EcgLine";
 const steps: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: MessageSquare, title: "Fale com a gente", text: "Chame no WhatsApp e descreva o problema, ou traga o aparelho na loja." },
   { icon: ClipboardCheck, title: "Diagnóstico e orçamento", text: "Avaliamos o aparelho e passamos o orçamento, sem compromisso." },
-  { icon: Wrench, title: "Conserto com garantia", text: "Aprovou? Nossos técnicos resolvem com peças de qualidade." },
+  { icon: Wrench, title: "Conserto especializado", text: "Aprovou? Nossos técnicos resolvem com peças de qualidade." },
   { icon: Gamepad, title: "Seu game de volta", text: "Retire na loja ou combine a entrega. É só ligar e jogar." },
 ];
 

@@ -51,7 +51,7 @@ export function Hero() {
           className="mx-auto mt-5 max-w-2xl text-base text-muted sm:text-lg"
         >
           Conserto e reparo de PlayStation, Xbox, Nintendo Switch e controles, com
-          técnicos especializados, garantia no serviço e orçamento sem compromisso.
+          técnicos especializados e orçamento sem compromisso.
         </motion.p>
 
         <motion.div
@@ -71,7 +71,7 @@ export function Hero() {
           className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted"
         >
           <ShieldCheck size={16} className="text-cyan" aria-hidden="true" />
-          Diagnóstico transparente · Garantia no serviço · Atendimento rápido
+          Diagnóstico transparente · Orçamento sem compromisso · Atendimento rápido
         </motion.p>
       </div>
     </section>

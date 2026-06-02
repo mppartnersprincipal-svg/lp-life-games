@@ -18,13 +18,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Vocês dão garantia?",
-    a: (
-      <>
-        Sim. Todo serviço sai com garantia de{" "}
-        <span className="placeholder-fill">[XX dias]</span>.{" "}
-        <span className="placeholder-fill">[Confirmar prazo.]</span>
-      </>
-    ),
+    a: "Não trabalhamos com garantia no serviço. Por isso fazemos um diagnóstico transparente e você aprova o orçamento antes de qualquer reparo.",
   },
   {
     q: "Quanto tempo demora o conserto?",
@@ -32,12 +26,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Atendem outras cidades / enviam pelos Correios?",
-    a: (
-      <span className="placeholder-fill">
-        [Confirmar: atende presencial em (cidades) e/ou recebe por envio com
-        rastreio.]
-      </span>
-    ),
+    a: "Nosso atendimento é presencial, na loja em Goiânia. Não atendemos outras cidades nem trabalhamos com envio pelos Correios.",
   },
   {
     q: "Quais modelos vocês consertam?",
