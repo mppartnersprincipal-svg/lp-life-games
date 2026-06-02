@@ -1,6 +1,5 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 
 /**
  * Gera o "d" de um traço de eletrocardiograma com `beats` batimentos.
@@ -29,7 +28,6 @@ function buildEcgPath(beats: number): string {
 
 /** Linha de ECG que se DESENHA conforme o scroll (divisor entre seções). */
 export function EcgScrollDivider({ beats = 4 }: { beats?: number }) {
-  const reduced = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -61,7 +59,7 @@ export function EcgScrollDivider({ beats = 4 }: { beats?: number }) {
           strokeWidth={3}
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ pathLength: reduced ? 1 : pathLength, filter: "drop-shadow(0 0 6px rgba(230,51,41,0.55))" }}
+          style={{ pathLength, filter: "drop-shadow(0 0 6px rgba(230,51,41,0.55))" }}
         />
       </svg>
     </div>
@@ -70,7 +68,6 @@ export function EcgScrollDivider({ beats = 4 }: { beats?: number }) {
 
 /** Linha de ECG do hero: começa "parada" e dá o pulso ao carregar. */
 export function EcgHeroPulse({ className = "" }: { className?: string }) {
-  const reduced = usePrefersReducedMotion();
   const beats = 5;
   const d = buildEcgPath(beats);
   const width = beats * BEAT_WIDTH;
@@ -91,7 +88,7 @@ export function EcgHeroPulse({ className = "" }: { className?: string }) {
         strokeWidth={3}
         strokeLinecap="round"
         strokeLinejoin="round"
-        initial={reduced ? { pathLength: 1, opacity: 0.9 } : { pathLength: 0, opacity: 0.9 }}
+        initial={{ pathLength: 0, opacity: 0.9 }}
         animate={{ pathLength: 1 }}
         transition={{ duration: 2.2, ease: "easeInOut", delay: 0.3 }}
         style={{ filter: "drop-shadow(0 0 8px rgba(230,51,41,0.6))" }}

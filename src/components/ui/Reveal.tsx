@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 
-/** Fade + translateY ao entrar na viewport (uma vez). */
+/**
+ * Fade + translateY ao entrar na viewport (uma vez).
+ * Com `prefers-reduced-motion`, mantém o fade de opacidade mas zera o
+ * deslize — assim a animação continua visível e acessível.
+ */
 export function Reveal({
   children,
   delay = 0,
@@ -18,14 +22,15 @@ export function Reveal({
 }) {
   const reduced = usePrefersReducedMotion();
   const MotionTag = motion[as];
+  const dy = reduced ? 0 : y;
 
   return (
     <MotionTag
       className={className}
-      initial={reduced ? false : { opacity: 0, y }}
-      whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: dy }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: reduced ? 0.5 : 0.6, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </MotionTag>
@@ -44,14 +49,13 @@ export function RevealGroup({
   stagger?: number;
   as?: "div" | "ul";
 }) {
-  const reduced = usePrefersReducedMotion();
   const MotionTag = motion[as];
 
   return (
     <MotionTag
       className={className}
-      initial={reduced ? false : "hidden"}
-      whileInView={reduced ? undefined : "show"}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
       variants={{
         hidden: {},
@@ -74,16 +78,19 @@ export function RevealItem({
   y?: number;
   as?: "div" | "li";
 }) {
+  const reduced = usePrefersReducedMotion();
   const MotionTag = motion[as];
+  const dy = reduced ? 0 : y;
+
   return (
     <MotionTag
       className={className}
       variants={{
-        hidden: { opacity: 0, y },
+        hidden: { opacity: 0, y: dy },
         show: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+          transition: { duration: reduced ? 0.5 : 0.55, ease: [0.22, 1, 0.36, 1] },
         },
       }}
     >

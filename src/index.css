@@ -122,6 +122,32 @@ h4 {
 }
 
 /* ============================================================
+   Efeito máquina de escrever (Hero) — cursor piscando
+   ============================================================ */
+.typewriter-caret {
+  display: inline-block;
+  width: 0.06em;
+  margin-left: 0.04em;
+  background: currentColor;
+  /* alinha o cursor à altura do texto sem aumentar a linha */
+  height: 0.92em;
+  vertical-align: -0.08em;
+  border-radius: 1px;
+  animation: typewriter-blink 0.9s steps(1) infinite;
+}
+
+@keyframes typewriter-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ============================================================
    prefers-reduced-motion: corta animações
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {

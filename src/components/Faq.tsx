@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import type { ReactNode } from "react";
 import { Section, SectionHeading } from "./ui/Section";
+import { RevealGroup, RevealItem } from "./ui/Reveal";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const faqs: { q: string; a: ReactNode }[] = [
@@ -53,11 +54,14 @@ export function Faq() {
     <Section id="faq" className="bg-bg-2/40">
       <SectionHeading title="Perguntas frequentes" />
 
-      <div className="mx-auto mt-10 max-w-3xl divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10">
+      <RevealGroup
+        className="mx-auto mt-10 max-w-3xl divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10"
+        stagger={0.07}
+      >
         {faqs.map((item, i) => {
           const isOpen = open === i;
           return (
-            <div key={item.q} className="bg-white/[0.02]">
+            <RevealItem key={item.q} className="bg-white/[0.02]">
               <h3>
                 <button
                   type="button"
@@ -95,10 +99,10 @@ export function Faq() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </RevealItem>
           );
         })}
-      </div>
+      </RevealGroup>
     </Section>
   );
 }

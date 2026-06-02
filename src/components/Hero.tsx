@@ -2,23 +2,28 @@ import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { WhatsappButton, LinkButton } from "./ui/Button";
 import { EcgHeroPulse } from "./ui/EcgLine";
+import { Typewriter } from "./ui/Typewriter";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
-
-const cascade = {
-  hidden: { opacity: 0, y: 20 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 * i },
-  }),
-};
 
 export function Hero() {
   const reduced = usePrefersReducedMotion();
-  const animProps = (i: number) =>
-    reduced
-      ? {}
-      : { variants: cascade, custom: i, initial: "hidden", animate: "show" };
+
+  // Mesmo com movimento reduzido, mantém o fade de opacidade (sem deslize).
+  const cascade = {
+    hidden: { opacity: 0, y: reduced ? 0 : 20 },
+    show: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 * i },
+    }),
+  };
+
+  const animProps = (i: number) => ({
+    variants: cascade,
+    custom: i,
+    initial: "hidden" as const,
+    animate: "show" as const,
+  });
 
   return (
     <section
@@ -42,8 +47,17 @@ export function Hero() {
           {...animProps(1)}
           className="text-glow-cyan text-3xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl"
         >
-          Seu console parou?{" "}
-          <span className="italic text-cyan">A gente traz ele de volta à vida.</span>
+          <Typewriter
+            speed={55}
+            startDelay={650}
+            segments={[
+              { text: "Seu console parou? " },
+              {
+                text: "A gente traz ele de volta à vida.",
+                className: "italic text-cyan",
+              },
+            ]}
+          />
         </motion.h1>
 
         <motion.p

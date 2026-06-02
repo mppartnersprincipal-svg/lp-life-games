@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { RevealGroup, RevealItem } from "./Reveal";
 
 /** Seção semântica com padding e largura máxima consistentes (mobile-first). */
 export function Section({
@@ -37,18 +38,31 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto max-w-2xl text-center ${className}`}>
+    <RevealGroup
+      className={`mx-auto max-w-2xl text-center ${className}`}
+      stagger={0.12}
+    >
       {eyebrow && (
-        <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
+        <RevealItem
+          as="div"
+          className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.2em] text-cyan"
+        >
           {eyebrow}
-        </p>
+        </RevealItem>
       )}
-      <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-        {title}
-      </h2>
+      <RevealItem as="div">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+          {title}
+        </h2>
+      </RevealItem>
       {subtitle && (
-        <p className="mt-4 text-base text-muted sm:text-lg">{subtitle}</p>
+        <RevealItem
+          as="div"
+          className="mt-4 text-base text-muted sm:text-lg"
+        >
+          {subtitle}
+        </RevealItem>
       )}
-    </div>
+    </RevealGroup>
   );
 }
