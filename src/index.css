@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — paleta tirada da logo (PRD §3)
+   ============================================================ */
+@theme {
+  --color-bg: #0a0b0d;
+  --color-bg-2: #000000;
+  --color-cyan: #6cc7d4;
+  --color-cyan-glow: #7ee6f5;
+  --color-red: #ce252c;
+  --color-red-bright: #e63329;
+  --color-white: #f3fbfb;
+  --color-muted: #9fb4b8;
+
+  --font-display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Sora", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: #001014;
+}
+
+/* Foco visível e acessível em qualquer elemento interativo */
+:focus-visible {
+  outline: 2px solid var(--color-cyan-glow);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Profundidade: gradiente radial ciano + grain overlay
+   ============================================================ */
+.bg-depth {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(
+      120% 80% at 50% -10%,
+      rgba(108, 199, 212, 0.18) 0%,
+      rgba(108, 199, 212, 0.04) 35%,
+      transparent 65%
+    ),
+    radial-gradient(
+      90% 60% at 85% 110%,
+      rgba(206, 37, 44, 0.1) 0%,
+      transparent 55%
+    );
+}
+
+/* Ruído/grain sutil — overlay fixo sobre toda a página */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Utilitários de marca
+   ============================================================ */
+.text-glow-cyan {
+  text-shadow: 0 0 18px rgba(126, 230, 245, 0.45);
+}
+
+.glow-cyan {
+  box-shadow:
+    0 0 0 1px rgba(126, 230, 245, 0.25),
+    0 8px 30px -8px rgba(108, 199, 212, 0.55);
+}
+
+.card-surface {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  border: 1px solid rgba(108, 199, 212, 0.14);
+}
+
+/* Placeholder [PREENCHER] — visivelmente marcado, nunca inventado */
+.placeholder-fill {
+  color: var(--color-red-bright);
+  font-style: italic;
+  background: rgba(206, 37, 44, 0.08);
+  border: 1px dashed rgba(230, 51, 41, 0.5);
+  border-radius: 6px;
+  padding: 0.05em 0.4em;
+}
+
+/* ============================================================
+   prefers-reduced-motion: corta animações
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
