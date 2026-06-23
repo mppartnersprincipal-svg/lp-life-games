@@ -1,10 +1,26 @@
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { WhatsappButton } from "./ui/Button";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+
+const navLinks = [
+  { href: "#servicos", label: "Serviços" },
+  { href: "#nintendo-switch", label: "Nintendo Switch" },
+  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#por-que", label: "Por que a Life Games" },
+  { href: "#faq", label: "Perguntas frequentes" },
+  { href: "#contato", label: "Contato" },
+];
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const reduced = usePrefersReducedMotion();
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-bg/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center" aria-label="Life Games — início">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+        <a href="#top" className="flex shrink-0 items-center" aria-label="Life Games — início">
           <img
             src="/logo.jpeg"
             alt="Life Games"
@@ -14,15 +30,66 @@ export function Header() {
           />
         </a>
 
-        <div className="flex items-center gap-3">
-          <span className="hidden text-sm text-muted md:inline">
-            Orçamento sem compromisso
-          </span>
+        {/* Navegação por seções — desktop */}
+        <nav aria-label="Seções do site" className="hidden items-center gap-5 xl:flex">
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="whitespace-nowrap text-sm font-medium text-muted transition-colors hover:text-cyan"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
           <WhatsappButton source="header" className="!min-h-[44px] !px-4 !py-2 text-sm">
             Chamar no WhatsApp
           </WhatsappButton>
+
+          {/* Botão do menu — mobile */}
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 text-white transition-colors hover:border-cyan/60 hover:text-cyan xl:hidden"
+          >
+            {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
         </div>
       </div>
+
+      {/* Navegação por seções — painel mobile */}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.nav
+            id="mobile-nav"
+            aria-label="Seções do site"
+            initial={reduced ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={reduced ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-white/5 bg-bg/95 backdrop-blur-md xl:hidden"
+          >
+            <ul className="mx-auto flex w-full max-w-6xl flex-col px-4 py-1 sm:px-6">
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-white/5 py-3.5 font-display text-sm font-semibold text-white/90 transition-colors hover:text-cyan"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

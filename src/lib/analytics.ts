@@ -18,6 +18,7 @@ type ConversionSource =
   | "hero"
   | "symptoms"
   | "services"
+  | "switch"
   | "final_cta"
   | "fab"
   | "footer";
