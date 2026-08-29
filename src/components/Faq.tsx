@@ -7,7 +7,7 @@ const faqs: { q: string; a: ReactNode }[] = [
     q: "O orçamento tem custo?",
     a: (
       <>
-        Não cobramos pelo orçamento — você só aprova se quiser seguir. A cobrança
+        Não cobramos pelo orçamento. Você só aprova se quiser seguir. A cobrança
         só acontece caso a manutenção não seja autorizada e você queira o laudo
         técnico.
       </>

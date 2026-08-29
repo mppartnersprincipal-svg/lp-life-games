@@ -4,8 +4,8 @@ import { Section, SectionHeading } from "./ui/Section";
 import { RevealGroup, RevealItem } from "./ui/Reveal";
 
 const reasons: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: Crosshair, title: "Especialistas só em games", text: 'Não somos assistência de "tudo um pouco" — vivemos videogame todos os dias.' },
-  { icon: Store, title: "Loja de verdade", text: "Endereço físico, equipe e reputação — não é conserto de fundo de quintal." },
+  { icon: Crosshair, title: "Especialistas só em games", text: 'Não somos assistência de "tudo um pouco". Vivemos videogame todos os dias.' },
+  { icon: Store, title: "Loja de verdade", text: "Endereço físico, equipe e reputação. Não é conserto de fundo de quintal." },
   { icon: Eye, title: "Transparência total", text: "Você aprova o orçamento antes. Sem surpresa na conta." },
   { icon: ShieldCheck, title: "Peças de qualidade", text: "Usamos componentes de qualidade para um reparo bem feito." },
   { icon: MessageCircleHeart, title: "Atendimento humano", text: "Fala direto com quem entende, pelo WhatsApp." },

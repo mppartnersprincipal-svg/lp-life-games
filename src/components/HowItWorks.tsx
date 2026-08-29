@@ -14,7 +14,7 @@ const steps: { icon: LucideIcon; title: string; text: string }[] = [
 export function HowItWorks() {
   return (
     <Section id="como-funciona">
-      <SectionHeading title={'Simples assim — do defeito ao "pronto pra jogar"'} />
+      <SectionHeading title={'Simples assim: do defeito ao "pronto pra jogar"'} />
 
       {/* Linha de ECG conectando os passos (desenha no scroll) */}
       <div className="mt-10">

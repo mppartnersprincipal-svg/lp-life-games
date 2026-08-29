@@ -35,7 +35,7 @@ const pillars: Pillar[] = [
     photo: PHOTOS.marioCustom,
     category: "Action figure personalizada",
     title: "Sua action figure, sob medida",
-    text: "A peça exclusiva que não existe em loja nenhuma. Você escolhe o personagem, o modelo e o tamanho — a gente cria do zero.",
+    text: "A peça exclusiva que não existe em loja nenhuma. Você escolhe o personagem, o modelo e o tamanho, e a gente cria do zero.",
     chips: ["Personagem", "Modelo", "Tamanho"],
     chipsLabel: "Você escolhe: personagem, modelo e tamanho",
     featured: true,

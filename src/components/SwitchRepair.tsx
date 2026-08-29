@@ -50,7 +50,7 @@ export function SwitchRepair() {
       <SectionHeading
         eyebrow="Nintendo Switch"
         title="Reparo e Desbloqueio de Nintendo Switch em Goiânia"
-        subtitle="Conserto especializado e desbloqueio de Nintendo Switch — modelos V1, V2, Switch OLED e Switch Lite. Diagnóstico na hora e orçamento sem compromisso, na nossa loja física em Goiânia."
+        subtitle="Conserto especializado e desbloqueio de Nintendo Switch: modelos V1, V2, Switch OLED e Switch Lite. Diagnóstico na hora e orçamento sem compromisso, na nossa loja física em Goiânia."
       />
 
       <RevealGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

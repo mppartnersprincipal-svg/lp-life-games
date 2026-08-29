@@ -81,7 +81,7 @@ export function Hero3d() {
           className="mx-auto mt-5 max-w-2xl text-base text-muted sm:text-lg"
         >
           Action figures de games, filmes e animes, peças personalizadas sob
-          medida e soluções 3D pro seu setup — criadas e impressas pela Life
+          medida e soluções 3D pro seu setup, criadas e impressas pela Life
           Games.
         </motion.p>
 
