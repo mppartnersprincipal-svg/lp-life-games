@@ -22,6 +22,7 @@ const navLinks: NavLink[] = [
   { href: "#faq", label: "Perguntas frequentes" },
   { href: "#contato", label: "Contato" },
   { href: "/", label: "Assistência técnica", accent: true },
+  { href: "/videogame-retro", label: "Videogames retrô", accent: true },
 ];
 
 /** Página irmã da assistência técnica: /impressao-3d */

@@ -8,6 +8,6 @@ dist-ssr
 *.tsbuildinfo
 .gstack/
 
-# Fotos originais (fontes das imagens em public/3d)
+# Fotos originais (fontes das imagens em public/3d e public/retro)
 Fotos Action Figures/
 Fotos Video Game Retro/

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A0B0D" />
+
+    <title>Videogames Retrô: PS1, Super Nintendo, Mega Drive e Nintendo 64 | Life Games</title>
+    <meta
+      name="description"
+      content="Reviva o sonho de criança: consoles retrô limpos por dentro e por fora e rigorosamente testados. PlayStation 1, Super Nintendo, Mega Drive e Nintendo 64 com controle, cabos, fonte e jogos. Cartuchos, controles e jogos originais na Life Games, em Goiânia."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Videogames Retrô | Life Games" />
+    <meta
+      property="og:description"
+      content="PS1, Super Nintendo, Mega Drive e Nintendo 64 limpos, testados e prontos pra jogar. Cartuchos, controles e jogos originais na Life Games."
+    />
+    <meta property="og:image" content="/og-image-retro.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data: loja de consoles retrô -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Life Games Videogames Retrô",
+        "description": "Consoles retrô limpos internamente e externamente e rigorosamente testados: PlayStation 1, Super Nintendo, Mega Drive e Nintendo 64. Cartuchos, controles, jogos originais de PS1 e PS2, jogos retrô e acessórios.",
+        "telephone": "+5562999136604",
+        "url": "https://lifegames.com.br/videogame-retro",
+        "image": "https://lifegames.com.br/og-image-retro.jpeg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. 24, 802 - St. Central",
+          "addressLocality": "Goiânia",
+          "addressRegion": "GO",
+          "postalCode": "74030-060",
+          "addressCountry": "BR"
+        },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "PlayStation 1 Slim (PSone)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "PlayStation 1 Fat" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Super Nintendo Baby" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Super Nintendo Fat" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Sega Mega Drive 3" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Nintendo 64" } }
+        ]
+      }
+    </script>
+
+    <!-- Fonts: Chakra Petch (títulos) + Sora (corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,600;1,700&family=Sora:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,600;1,700&family=Sora:wght@400;500;600&display=swap"
+    />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5QMH35BB");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5QMH35BB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"></div>
+    <script type="module" src="/src/main-retro.tsx"></script>
+  </body>
+</html>

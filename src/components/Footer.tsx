@@ -4,10 +4,11 @@ import { useWhatsappUrl } from "../lib/whatsapp";
 import { trackWhatsappClick } from "../lib/analytics";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 
-// Páginas do site — linkadas no rodapé das duas landings.
+// Páginas do site — linkadas no rodapé de todas as landings.
 const pages = [
   { href: "/", label: "Assistência técnica de videogames" },
   { href: "/impressao-3d", label: "Impressão 3D gamer e geek" },
+  { href: "/videogame-retro", label: "Videogames retrô" },
 ];
 
 export function Footer() {
@@ -26,8 +27,8 @@ export function Footer() {
             loading="lazy"
           />
           <p className="mt-4 max-w-xs text-sm text-muted">
-            Conserto e reparo de hardware de videogames e impressão 3D gamer e
-            geek. Loja física em Goiânia.
+            Conserto e reparo de hardware de videogames, impressão 3D gamer e
+            geek e consoles retrô. Loja física em Goiânia.
           </p>
           <nav aria-label="Páginas do site" className="mt-5">
             <ul className="space-y-2 text-sm">
@@ -135,7 +136,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-10 w-full max-w-6xl border-t border-white/10 pt-6 text-center text-xs text-muted">
-        © {new Date().getFullYear()} Life Games — Todos os direitos reservados.
+        © {new Date().getFullYear()} Life Games. Todos os direitos reservados.
       </div>
     </footer>
   );

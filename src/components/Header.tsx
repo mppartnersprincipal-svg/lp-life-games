@@ -19,6 +19,7 @@ const defaultLinks: NavLink[] = [
   { href: "#faq", label: "Perguntas frequentes" },
   { href: "#contato", label: "Contato" },
   { href: "/impressao-3d", label: "Impressão 3D", accent: true },
+  { href: "/videogame-retro", label: "Videogames retrô", accent: true },
 ];
 
 export function Header({ links = defaultLinks }: { links?: NavLink[] }) {
@@ -28,7 +29,7 @@ export function Header({ links = defaultLinks }: { links?: NavLink[] }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <a href="#top" className="flex shrink-0 items-center" aria-label="Life Games — início">
+        <a href="#top" className="flex shrink-0 items-center" aria-label="Life Games, início">
           <img
             src="/logo.jpeg"
             alt="Life Games"

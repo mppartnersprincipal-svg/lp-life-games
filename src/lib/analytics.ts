@@ -20,12 +20,14 @@ type ConversionSource =
   | "services"
   | "switch"
   | "pillars"
+  | "consoles"
+  | "extras"
   | "final_cta"
   | "fab"
   | "footer";
 
 export function trackWhatsappClick(source: ConversionSource): void {
-  // "page" distingue as landings (/ = assistência, /impressao-3d = 3D)
+  // "page" distingue as landings (/, /impressao-3d, /videogame-retro)
   // sem precisar de outro evento no GTM.
   const payload = {
     event: "whatsapp_click",

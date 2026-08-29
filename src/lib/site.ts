@@ -20,6 +20,14 @@ export const WHATSAPP_URL_3D = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeUR
   WHATSAPP_MESSAGE_3D
 )}`;
 
+// Mensagem pré-preenchida da página de Videogames Retrô (/videogame-retro).
+export const WHATSAPP_MESSAGE_RETRO =
+  "Olá! Tenho interesse em um videogame retrô";
+
+export const WHATSAPP_URL_RETRO = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE_RETRO
+)}`;
+
 // Telefone para click-to-call (tel:). [PREENCHER] com o número de ligação.
 // Enquanto não confirmado, mantemos o mesmo do WhatsApp.
 export const PHONE_DISPLAY = "(62) 99913-6604";
