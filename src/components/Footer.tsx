@@ -1,17 +1,20 @@
 import { Phone, Instagram, Facebook, MapPin, Clock, ExternalLink } from "lucide-react";
-import {
-  WHATSAPP_URL,
-  PHONE_DISPLAY,
-  PHONE_TEL,
-  SOCIAL,
-  STORE,
-} from "../lib/site";
+import { PHONE_DISPLAY, PHONE_TEL, SOCIAL, STORE } from "../lib/site";
+import { useWhatsappUrl } from "../lib/whatsapp";
 import { trackWhatsappClick } from "../lib/analytics";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 
+// Páginas do site — linkadas no rodapé das duas landings.
+const pages = [
+  { href: "/", label: "Assistência técnica de videogames" },
+  { href: "/impressao-3d", label: "Impressão 3D gamer e geek" },
+];
+
 export function Footer() {
+  const whatsappUrl = useWhatsappUrl();
+
   return (
-    <footer className="relative z-[2] border-t border-white/10 bg-bg-2 px-4 pb-28 pt-12 sm:px-6 lg:pb-12">
+    <footer className="relative z-[2] border-t border-white/10 bg-bg-2 px-4 pb-28 pt-12 sm:px-6">
       <div className="mx-auto grid w-full max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <img
@@ -23,9 +26,20 @@ export function Footer() {
             loading="lazy"
           />
           <p className="mt-4 max-w-xs text-sm text-muted">
-            Conserto e reparo de hardware de videogames. Loja física em Goiânia —
-            a gente traz seu console de volta à vida.
+            Conserto e reparo de hardware de videogames e impressão 3D gamer e
+            geek. Loja física em Goiânia.
           </p>
+          <nav aria-label="Páginas do site" className="mt-5">
+            <ul className="space-y-2 text-sm">
+              {pages.map(({ href, label }) => (
+                <li key={href}>
+                  <a href={href} className="text-white/90 hover:text-cyan">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         <div className="text-sm">
@@ -35,7 +49,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3">
             <li>
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsappClick("footer")}

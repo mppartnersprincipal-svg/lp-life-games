@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import type { ReactNode } from "react";
 import { Section, SectionHeading } from "./ui/Section";
-import { RevealGroup, RevealItem } from "./ui/Reveal";
-import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { FaqAccordion } from "./ui/FaqAccordion";
 
 const faqs: { q: string; a: ReactNode }[] = [
   {
@@ -47,62 +43,10 @@ const faqs: { q: string; a: ReactNode }[] = [
 ];
 
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
-  const reduced = usePrefersReducedMotion();
-
   return (
     <Section id="faq" className="bg-bg-2/40">
       <SectionHeading title="Perguntas frequentes" />
-
-      <RevealGroup
-        className="mx-auto mt-10 max-w-3xl divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10"
-        stagger={0.07}
-      >
-        {faqs.map((item, i) => {
-          const isOpen = open === i;
-          return (
-            <RevealItem key={item.q} className="bg-white/[0.02]">
-              <h3>
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-panel-${i}`}
-                  id={`faq-trigger-${i}`}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-display font-semibold text-white transition-colors hover:text-cyan"
-                >
-                  <span>{item.q}</span>
-                  <ChevronDown
-                    size={20}
-                    aria-hidden="true"
-                    className={`shrink-0 text-cyan transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-              </h3>
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    id={`faq-panel-${i}`}
-                    role="region"
-                    aria-labelledby={`faq-trigger-${i}`}
-                    initial={reduced ? false : { height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={reduced ? { opacity: 0 } : { height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-muted">
-                      {item.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </RevealItem>
-          );
-        })}
-      </RevealGroup>
+      <FaqAccordion items={faqs} />
     </Section>
   );
 }

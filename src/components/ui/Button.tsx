@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { WHATSAPP_URL } from "../../lib/site";
+import { useWhatsappUrl } from "../../lib/whatsapp";
 import { trackWhatsappClick } from "../../lib/analytics";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
@@ -35,9 +35,11 @@ export function WhatsappButton({
   className?: string;
   icon?: boolean;
 }) {
+  const whatsappUrl = useWhatsappUrl();
+
   return (
     <motion.a
-      href={WHATSAPP_URL}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsappClick(source)}

@@ -7,3 +7,7 @@ dist-ssr
 *.log
 *.tsbuildinfo
 .gstack/
+
+# Fotos originais (fontes das imagens em public/3d)
+Fotos Action Figures/
+Fotos Video Game Retro/

@@ -19,12 +19,19 @@ type ConversionSource =
   | "symptoms"
   | "services"
   | "switch"
+  | "pillars"
   | "final_cta"
   | "fab"
   | "footer";
 
 export function trackWhatsappClick(source: ConversionSource): void {
-  const payload = { event: "whatsapp_click", source };
+  // "page" distingue as landings (/ = assistência, /impressao-3d = 3D)
+  // sem precisar de outro evento no GTM.
+  const payload = {
+    event: "whatsapp_click",
+    source,
+    page: window.location.pathname,
+  };
 
   // GTM
   window.dataLayer = window.dataLayer || [];

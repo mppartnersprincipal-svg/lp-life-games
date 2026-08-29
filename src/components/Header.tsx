@@ -4,16 +4,24 @@ import { Menu, X } from "lucide-react";
 import { WhatsappButton } from "./ui/Button";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
-const navLinks = [
+export type NavLink = {
+  href: string;
+  label: string;
+  /** Link para a outra página (destacado em ciano na navegação). */
+  accent?: boolean;
+};
+
+const defaultLinks: NavLink[] = [
   { href: "#servicos", label: "Serviços" },
   { href: "#nintendo-switch", label: "Nintendo Switch" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#por-que", label: "Por que a Life Games" },
   { href: "#faq", label: "Perguntas frequentes" },
   { href: "#contato", label: "Contato" },
+  { href: "/impressao-3d", label: "Impressão 3D", accent: true },
 ];
 
-export function Header() {
+export function Header({ links = defaultLinks }: { links?: NavLink[] }) {
   const [open, setOpen] = useState(false);
   const reduced = usePrefersReducedMotion();
 
@@ -31,12 +39,16 @@ export function Header() {
         </a>
 
         {/* Navegação por seções — desktop */}
-        <nav aria-label="Seções do site" className="hidden items-center gap-5 xl:flex">
-          {navLinks.map(({ href, label }) => (
+        <nav aria-label="Seções do site" className="hidden items-center gap-4 xl:flex">
+          {links.map(({ href, label, accent }) => (
             <a
               key={href}
               href={href}
-              className="whitespace-nowrap text-sm font-medium text-muted transition-colors hover:text-cyan"
+              className={`whitespace-nowrap text-sm font-medium transition-colors ${
+                accent
+                  ? "text-cyan hover:text-cyan-glow"
+                  : "text-muted hover:text-cyan"
+              }`}
             >
               {label}
             </a>
@@ -75,12 +87,14 @@ export function Header() {
             className="overflow-hidden border-t border-white/5 bg-bg/95 backdrop-blur-md xl:hidden"
           >
             <ul className="mx-auto flex w-full max-w-6xl flex-col px-4 py-1 sm:px-6">
-              {navLinks.map(({ href, label }) => (
+              {links.map(({ href, label, accent }) => (
                 <li key={href}>
                   <a
                     href={href}
                     onClick={() => setOpen(false)}
-                    className="block border-b border-white/5 py-3.5 font-display text-sm font-semibold text-white/90 transition-colors hover:text-cyan"
+                    className={`block border-b border-white/5 py-3.5 font-display text-sm font-semibold transition-colors hover:text-cyan ${
+                      accent ? "text-cyan" : "text-white/90"
+                    }`}
                   >
                     {label}
                   </a>
