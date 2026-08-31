@@ -35,7 +35,7 @@ const consoles: Console[] = [
     ],
   },
   {
-    photo: RETRO_PHOTOS.psone,
+    photo: RETRO_PHOTOS.ps1Fat,
     brand: "Sony",
     name: "PlayStation 1 Fat",
     price: "R$ 699,99",

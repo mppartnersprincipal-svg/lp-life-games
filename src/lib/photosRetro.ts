@@ -16,6 +16,10 @@ export const RETRO_PHOTOS = {
     "psone",
     "PlayStation 1 Slim (PSone) branco com controle analógico na loja Life Games"
   ),
+  ps1Fat: p(
+    "ps1-fat",
+    "PlayStation 1 Fat cinza na prateleira da Life Games, com o cartão da loja ao lado"
+  ),
   superNintendo: p(
     "super-nintendo",
     "Super Nintendo com cartucho de Bubsy II encaixado, sobre a bancada da Life Games"
