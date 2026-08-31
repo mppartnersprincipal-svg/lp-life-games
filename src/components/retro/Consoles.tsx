@@ -24,6 +24,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.psone,
     brand: "Sony",
     name: "PlayStation 1 Slim (PSone)",
+    price: "R$ 599,99",
     items: [
       "1 controle 1ª linha",
       "1 memory card",
@@ -37,6 +38,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.psone,
     brand: "Sony",
     name: "PlayStation 1 Fat",
+    price: "R$ 699,99",
     items: [
       "1 controle 1ª linha",
       "1 memory card",
@@ -50,6 +52,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.superNintendo,
     brand: "Nintendo",
     name: "Super Nintendo Baby",
+    price: "R$ 549,99",
     items: [
       "1 controle 1ª linha",
       "Cabo RCA/AV",
@@ -62,6 +65,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.superNintendo,
     brand: "Nintendo",
     name: "Super Nintendo Fat",
+    price: "R$ 699,99",
     items: [
       "1 controle 1ª linha",
       "Cabo RCA/AV",
@@ -74,6 +78,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.megaDrive,
     brand: "Sega",
     name: "Mega Drive 3",
+    price: "R$ 499,99",
     items: [
       "1 controle 1ª linha",
       "Cabo AV",
@@ -85,6 +90,7 @@ const consoles: Console[] = [
     photo: RETRO_PHOTOS.nintendo64,
     brand: "Nintendo",
     name: "Nintendo 64",
+    price: "R$ 699,99",
     items: [
       "1 controle original",
       "Fonte original",
