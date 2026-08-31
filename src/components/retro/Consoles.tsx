@@ -62,7 +62,7 @@ const consoles: Console[] = [
     ],
   },
   {
-    photo: RETRO_PHOTOS.superNintendo,
+    photo: RETRO_PHOTOS.superNintendoFat,
     brand: "Nintendo",
     name: "Super Nintendo Fat",
     price: "R$ 699,99",

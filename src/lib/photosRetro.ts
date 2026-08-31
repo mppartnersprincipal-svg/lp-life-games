@@ -24,6 +24,10 @@ export const RETRO_PHOTOS = {
     "super-nintendo",
     "Super Nintendo com cartucho de Bubsy II encaixado, sobre a bancada da Life Games"
   ),
+  superNintendoFat: p(
+    "super-nintendo-fat",
+    "Super Nintendo Fat cinza na prateleira da Life Games, com o cartão da loja à frente"
+  ),
   megaDrive: p(
     "mega-drive",
     "Sega Mega Drive preto com cartucho de Mazin Saga encaixado"
