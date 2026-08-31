@@ -40,7 +40,9 @@ export function Header({ links = defaultLinks }: { links?: NavLink[] }) {
         </a>
 
         {/* Navegação por seções — desktop */}
-        <nav aria-label="Seções do site" className="hidden items-center gap-4 xl:flex">
+        {/* Links das outras páginas (accent) aparecem a partir de lg;
+            âncoras de seção só a partir de xl (antes disso ficam no menu ☰). */}
+        <nav aria-label="Seções do site" className="hidden items-center gap-4 lg:flex">
           {links.map(({ href, label, accent }) => (
             <a
               key={href}
@@ -48,7 +50,7 @@ export function Header({ links = defaultLinks }: { links?: NavLink[] }) {
               className={`whitespace-nowrap text-sm font-medium transition-colors ${
                 accent
                   ? "text-cyan hover:text-cyan-glow"
-                  : "text-muted hover:text-cyan"
+                  : "hidden text-muted hover:text-cyan xl:inline"
               }`}
             >
               {label}
